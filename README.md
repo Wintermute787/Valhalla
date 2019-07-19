@@ -1,8 +1,17 @@
 ## Valhalla
 A website to view, connect, manage tabletop characters. 
-
+View the project structure here: 
+https://drive.google.com/file/d/1eVtS1TJr9rkA0okuMY0ukin5ooEv3cYZ/view?usp=sharing
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Technologies
+React,
+Redux,
+Styled components,
+Material UI,
+D&D API
+
 
 ## Available Scripts
 
@@ -70,3 +79,7 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+## Copyright
+
+Site built by Joe Barnes 2019
