@@ -8,6 +8,11 @@
       <change afterPath="$PROJECT_DIR$/../expressreact/backend/routes/exercises.js" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../expressreact/backend/routes/users.js" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../expressreact/backend/server.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../expressreact/src/components/CreateExercise.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../expressreact/src/components/CreateUser.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../expressreact/src/components/EditExercise.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../expressreact/src/components/ExerciseList.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../expressreact/src/components/Navbar.jsx" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../rpgcharacter/__tests__/reducers/index.js" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../rpgcharacter/src/actions/actionsIndex.js" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../rpgcharacter/src/components/CharacterList.js" afterDir="false" />
@@ -17,11 +22,8 @@
       <change afterPath="$PROJECT_DIR$/../rpgcharacter/src/constants/constantsIndex.js" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../rpgcharacter/src/reducers/ReducersIndex.js" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../rpgcharacter/src/reducers/characterViewerReducer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Footer.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Header.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/HeroImage.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/LandingPage.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/LandingPageContent.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/.env" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/models/user.model.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../doctorLookup/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../doctorLookup/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../doctorLookup/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../doctorLookup/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../doctorLookup/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../doctorLookup/.idea/workspace.xml" afterDir="false" />
@@ -60,7 +62,6 @@
       <change beforePath="$PROJECT_DIR$/../trackSelector" beforeDir="false" afterPath="$PROJECT_DIR$/../trackSelector" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../travelSite" beforeDir="false" afterPath="$PROJECT_DIR$/../travelSite" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/server.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -73,34 +74,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/App.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="182">
-              <caret line="7" column="4" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/index.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/backend/server.js">
+        <entry file="file://$PROJECT_DIR$/backend/models/user.model.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="495">
-              <caret line="27" column="3" selection-start-line="27" selection-start-column="3" selection-end-line="27" selection-end-column="3" />
+            <state relative-caret-position="260">
+              <caret line="58" column="27" lean-forward="true" selection-start-line="58" selection-start-column="27" selection-end-line="58" selection-end-column="27" />
             </state>
           </provider>
         </entry>
@@ -116,6 +94,8 @@
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/src/components/App.js" />
         <option value="$PROJECT_DIR$/backend/server.js" />
+        <option value="$PROJECT_DIR$/backend/.env" />
+        <option value="$PROJECT_DIR$/backend/models/user.model.js" />
       </list>
     </option>
   </component>
@@ -147,13 +127,8 @@
             <path>
               <item name="valhalla" type="b2602c69:ProjectViewProjectNode" />
               <item name="valhalla" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="valhalla" type="b2602c69:ProjectViewProjectNode" />
-              <item name="valhalla" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="backend" type="462c0819:PsiDirectoryNode" />
+              <item name="models" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -219,12 +194,12 @@
       <option name="presentableId" value="Default" />
       <updated>1563559122644</updated>
       <workItem from="1563559124061" duration="2987000" />
-      <workItem from="1564153415570" duration="2131000" />
+      <workItem from="1564153415570" duration="5485000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5118000" />
+    <option name="totallyTimeSpent" value="8472000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
@@ -294,16 +269,6 @@
     <entry file="file://$PROJECT_DIR$/src/components/Header.jsx">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/App.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="7" column="4" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -315,8 +280,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/backend/server.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
+        <state relative-caret-position="702">
           <caret line="27" column="3" selection-start-line="27" selection-start-column="3" selection-end-line="27" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/.env">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="26">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/models/user.model.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="58" column="27" lean-forward="true" selection-start-line="58" selection-start-column="27" selection-end-line="58" selection-end-column="27" />
         </state>
       </provider>
     </entry>
