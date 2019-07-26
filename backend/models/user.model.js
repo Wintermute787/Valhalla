@@ -1,69 +1,18 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
+const characterSchema = new Schema({
+	name: String,
+	level: Number,
+	race: String,
+	job: String
+});
+
 const userSchema = new Schema({
 	username: {
-		type: String,
-		required: true,
-		unique: true,
-		trim: true,
-		minlength: 3
+		type: String
 	},
-	characters: [{
-		name: {
-			type: String,
-			required: true,
-			unique: false,
-			trim: true,
-			minlength: 3
-		},
-		level: {
-			type: Number,
-			required: true,
-			unique: false,
-			trim: true,
-			minlength: 1
-		},
-		race: {
-			type: String,
-			required: true,
-			unique: false,
-			trim: true,
-			minlength: 1
-		},
-		items: [{
-			name: {
-				type: String,
-				required: true,
-				unique: false,
-				trim: true,
-				minlength: 1
-			},
-			number: {
-				type: Number,
-				required: true,
-				unique: false,
-				trim: true,
-				minlength: 1
-			},
-			description: {
-				type: String,
-				required: true,
-				unique: false,
-				trim: true,
-				minlength: 1
-			}
-		}],
-		job: {
-			type: String,
-			required: true,
-			unique: false,
-			trim: true,
-			minlength: 1
-		}
-	}]
-}, {
-	timestamps: true,
+	characters:[characterSchema]
 });
 
 const User = mongoose.model('User', userSchema);
