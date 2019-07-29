@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const passport = require('passport');
 const users = require('./routes/users')
 
+
 require('dotenv').config();
 
 
@@ -26,6 +27,7 @@ connection.once('open', () => {
 
 //passport config
 require('./passport')(passport);
+
 
 
 //routes
