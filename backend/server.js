@@ -1,6 +1,8 @@
 const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
+const passport = require('passport');
+const users = require('./routes/users')
 
 require('dotenv').config();
 
@@ -21,6 +23,10 @@ const connection = mongoose.connection;
 connection.once('open', () => {
 	console.log('MongoDB database connection established successfully');
 });
+
+//passport config
+require('./passport')(passport);
+
 
 //routes
 const userRouter = require('./routes/users');
