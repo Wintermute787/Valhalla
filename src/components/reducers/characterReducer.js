@@ -1,4 +1,4 @@
-const initialState = {
+export const initialState = {
     characterById: {
         1: {
             name: "mike",
@@ -50,6 +50,7 @@ const characterReducer = (state = initialState, action) => {
             return {...state, characterById: {...state.characterById,
         [id]: {
             name: name,
+            id: id,
             job: job,
             race: race,
             level: level,
@@ -66,6 +67,7 @@ const characterReducer = (state = initialState, action) => {
             return {...state, characterById: {...state.characterById,
             [id]: {
                 name: name,
+                id: id,
                 job: job,
                 race: race,
                 level: level,

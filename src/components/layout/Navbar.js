@@ -5,7 +5,7 @@ class Navbar extends Component {
     return (
       <div className="navbar-fixed">
         <nav className="z-depth-0">
-          <div className="nav-wrapper black">
+          <div className="nav-wrapper red accent-4">
             <Link
               to="/"
               style={{
@@ -13,7 +13,7 @@ class Navbar extends Component {
               }}
               className="col s5 brand-logo center white-text"
             >
-              <i className="material-icons">code</i>
+              <i className="material-icons">group_work</i>
               Valhalla
             </Link>
           </div>

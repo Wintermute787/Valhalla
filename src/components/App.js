@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import Navbar from '../components/layout/Navbar';
 import Landing from '../components/layout/Landing';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import './App.css';
+
 import Register from '../components/auth/Register';
 import Login from '../components/auth/Login';
 import {Provider} from "react-redux";
@@ -13,6 +13,8 @@ import {setCurrentUser, logoutUser} from './actions/authActions'
 import PrivateRoute from './private-route/PrivateRoute'
 import Dashboard from './dashboard/Dashboard';
 import CharacterShow from './layout/CharacterShow'
+import Footer from '../components/layout/Footer'
+
 
 //check for token to keep user logged in
 if(localStorage.jwtToken) {
@@ -35,24 +37,32 @@ if(localStorage.jwtToken) {
   }
 }
 
+
+
+
 class App extends Component {
   render() {
     return (
       <Provider store={store}>
       <Router>
       <div className="App">
-        <Navbar />
+      <Navbar />
         
         <Route exact path="/" component={Landing}/>
+        
         <Route exact path="/register" component={Register} />
         <Route exact path="/login" component={Login} />
         <Switch>
           <PrivateRoute exact path='/dashboard' component={Dashboard}/>
-          <PrivateRoute path='/character' component={CharacterShow}/>
+          <PrivateRoute path='/character' component={CharacterShow}/> 
         </Switch>
+      
       </div>
+      
       </Router>
+ 
       </Provider>
+       
     );
   }
 }
