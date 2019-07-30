@@ -32,6 +32,20 @@ router.route('/character').get((req, res) => {
 })
 
 
+router.route('/character').post((req, res)=> {
+	const newCharacter = new Character({
+		name: req.body.name,
+		job: req.body.job,
+		race: req.body.race,
+		level: req.body.level
+	})
+	newCharacter
+	.save()
+	.then(character => res.json(character))
+	.catch(err => res.status(400).json("error" + err));
+})
+
+
 
 router.route("/register").post((req, res) => {
 	const { errors, isValid } = validateRegisterInput(req.body);

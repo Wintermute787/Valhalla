@@ -20,10 +20,6 @@ const userSchema = new Schema({
 		type: Date,
 		default: Date.now
 	},
-	character: [{
-		type: Schema.Types.ObjectId,
-		ref: "Character"
-	}]
 	
 });
 

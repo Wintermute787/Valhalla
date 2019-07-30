@@ -18,13 +18,7 @@ const characterSchema = new Schema({
         type: String,
         required: true,
     },
-    user: {
-        id: {
-            type: Schema.Types.ObjectId,
-            ref: "User"
-        },
-        username: String,
-    } 
+  
 });
 
 const Character = mongoose.model('Character', characterSchema);
