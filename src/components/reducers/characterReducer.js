@@ -44,7 +44,7 @@ export const initialState = {
 }
 
 const characterReducer = (state = initialState, action) => {
-    const {name, job, race, level, id, items, image} = action;
+    const {name, job, race, level, id, items, image} = action;    
     switch(action.type) {
         case 'ADD_CHARACTER':
             return {...state, characterById: {...state.characterById,

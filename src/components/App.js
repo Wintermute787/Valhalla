@@ -14,6 +14,7 @@ import PrivateRoute from './private-route/PrivateRoute'
 import Dashboard from './dashboard/Dashboard';
 import CharacterShow from './layout/CharacterShow'
 import Footer from '../components/layout/Footer'
+import CharacterForm from './layout/CharacterForm'
 
 
 //check for token to keep user logged in
@@ -54,6 +55,7 @@ class App extends Component {
         <Route exact path="/login" component={Login} />
         <Switch>
           <PrivateRoute exact path='/dashboard' component={Dashboard}/>
+          <PrivateRoute exact path='/newcharacter' component={CharacterForm}/>
           <PrivateRoute path='/character' component={CharacterShow}/> 
         </Switch>
       
