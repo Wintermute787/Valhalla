@@ -1,11 +1,8 @@
 import React, { Component, useState } from "react";
 import { Link } from "react-router-dom";
 import styled from 'styled-components';
-import sideImage from '../assets/sideimage1.jpg'
-import sideImage2 from '../assets/sideimage2.jpg'
-import Button from '@material-ui/core/Button';
 import { connect} from 'react-redux';
-import side3 from '../assets/side3.webp'
+import { Container } from '@material-ui/core';
 
 
 const BodyBanner = styled.div`
@@ -37,7 +34,6 @@ text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
 
 const Side = styled.div`
  
-background-image: url(${side3});
     background-position: center;
     padding: 2% 20px;
     grid-column-start: 3;
@@ -63,37 +59,58 @@ grid-row-end: 4;
      text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
 `
 
-const ButtonSpacing = styled.div`
-    display: flex;
-    justify-content: space-around;
-`
 
-const GameBanner = (props) => {
-    return (
-        <BodyBanner>
-            <Header className="red accent-4">Choose Your Game</Header>
-            <Content>
-            <h2>Join with friends!</h2>
-                <p>Browese the games section and take a look at who is recruiting. Our DM's are ready to share their worlds of action and adventure with you.</p>
-                <Link to='/games'>
+const GameShow = (props) => {
+    const gameKeys = Object.keys(props.game)
+    return(
+        <div>
+            <Container>
+            <h4 style={{color: 'black', textTransform: 'uppercase', fontSize: '4em', fontFamily: 'Apple Color Emoji', textShadow: '2px 4px 3px rgba(0,0,0,0.3)', textAlign:'center'}}>
+                Choose your game!
+            </h4>
+            <Link to='/dashboard'>
               <button
                 style={{
                   width: "150px",
+                  
                   borderRadius: "3px",
                   letterSpacing: "1.5px",
                   marginTop: "1rem"
                 }}
                 
                 className="btn btn-large waves-effect waves-light hoverable red accent-4" >
-                View 
+                Back
               </button>
               </Link>
+              </Container>
+        {gameKeys.map(gameId => {
+            let games = props.game[gameId]
+            return <div>
+                <Container>
+            <BodyBanner>
+            <Header className="red accent-4">{games.name}</Header>
+            <Content>
+            <h7>{games.levels}</h7>
+                <p>{games.description}</p>
             </Content>
-            
-            <Side></Side>
-            
+            <Side>
+                <img src={games.image}
+                width={500}
+                height={300}>
+                </img>
+            </Side>
         </BodyBanner>
+        </Container>
+        </div>
+        })}
+        </div>
     )
 }
 
-export default connect(null)(GameBanner);
+const mapStateToProps = state => {
+    return {
+        game: state.games.gameById
+    }
+}
+
+export default connect(mapStateToProps)(GameShow);

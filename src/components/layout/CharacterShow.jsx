@@ -25,6 +25,14 @@ grid-gap: 10px;
 margin-top: 3em;
 `;
 
+const Title = styled.div`
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: 5em;
+    letter-spacing: 2rem;
+    font-weight: 100;
+`
+
 var heroBox = {
     minHeight: "100%",
     minWidth: '1024px',
@@ -104,6 +112,11 @@ const CharacterShow = (props) => {
     return (
         <div style={heroBox}>
             <Container>
+                <Title>
+                <h4 style={{color: 'black', textTransform: 'uppercase', fontSize: '4em', fontFamily: 'Apple Color Emoji', textShadow: '2px 4px 3px rgba(0,0,0,0.3)', textAlign:'center'}}>
+                Characters
+            </h4>
+                </Title>
                 <Wrapper>
 
                     {characterKeys.map(characterId => {

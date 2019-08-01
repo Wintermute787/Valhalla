@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import Navbar from '../components/layout/Navbar';
 import Landing from '../components/layout/Landing';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-
+import GameShow from './layout/GameShow';
 import Register from '../components/auth/Register';
 import Login from '../components/auth/Login';
 import {Provider} from "react-redux";
@@ -57,6 +57,7 @@ class App extends Component {
           <PrivateRoute exact path='/dashboard' component={Dashboard}/>
           <PrivateRoute exact path='/newcharacter' component={CharacterForm}/>
           <PrivateRoute path='/character' component={CharacterShow}/> 
+          <PrivateRoute path='/games' component={GameShow}/> 
         </Switch>
       
       </div>
