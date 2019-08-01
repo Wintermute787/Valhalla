@@ -5,9 +5,10 @@ import { logoutUser } from '../actions/authActions';
 import DasboardBanner from '../layout/DashboardBanner'
 import { Container } from '@material-ui/core';
 import dashboard2 from '../assets/dashboard2.jpeg'
-import styled from 'styled-components';
+import styled, {keyframes} from 'styled-components';
 import GameBanner from '../layout/GameBanner';
 import dashboard3 from '../assets/dashboard3.jpg'
+
 
 
 var heroBox = {
@@ -19,14 +20,16 @@ var heroBox = {
   left: "0",
   position: "absolute",
   backgroundImage: `url(${dashboard3})`,
- 
+ overflowY: 'scroll',
   backgroundSize: "cover"
-}
+};
 
 var innerBox = {
   marginTop: '9em',
   zIndex: '49999'
-}
+};
+
+
 
 
 
@@ -45,7 +48,9 @@ class Dashboard extends Component {
       <div style={heroBox}>
       <Container>
         <div style={innerBox}>
+
           <DasboardBanner />
+
           <GameBanner/>
           <button
             style={{

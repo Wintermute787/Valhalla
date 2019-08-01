@@ -12,6 +12,9 @@ import Typography from '@material-ui/core/Typography';
 import styled from 'styled-components';
 import Container from '@material-ui/core/Container';
 import TextField from '@material-ui/core/TextField';
+import characterBackground from '../assets/characterBackground.jpg'
+import {Link} from "react-router-dom";
+
 
 
 const Wrapper = styled.div`
@@ -20,7 +23,24 @@ grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 grid-auto-row: 100px;
 grid-gap: 10px;
 margin-top: 3em;
-`
+`;
+
+var heroBox = {
+    minHeight: "100%",
+    minWidth: '1024px',
+    width: "100%",
+    height: "100%",
+    top: "0",
+    left: "0",
+    position: "absolute",
+    backgroundImage: `url(${characterBackground})`,
+    overflowY: 'scroll',
+    backgroundSize: "cover"
+};
+
+var formStyle = {
+    backgroundColor: 'white'
+}
 
 const useStyles = makeStyles(theme => ({
     card: {
@@ -28,6 +48,9 @@ const useStyles = makeStyles(theme => ({
         overflow: 'hidden',
         gridColumn: 'span 1',
         gridRow: 'span 1',
+        backgroundColor: '#D50000',
+        color: 'white',
+        marginTop: '3rem'
     },
     textField: {
         marginLeft: theme.spacing(1),
@@ -39,7 +62,8 @@ const useStyles = makeStyles(theme => ({
         
     },
     button: {
-        margin: theme.spacing(1)
+        margin: theme.spacing(1),
+
     },
     input: {
         display: 'none',
@@ -78,97 +102,101 @@ const CharacterShow = (props) => {
     }
 
     return (
-        <Container>
-        <Wrapper>
+        <div style={heroBox}>
+            <Container>
+                <Wrapper>
 
-            {characterKeys.map(characterId => {
+                    {characterKeys.map(characterId => {
+                        let character = props.charactersList[characterId];
+                        return editing !== characterId ?
+                        <div key={characterId}>
+                            <Card className={classes.card}>
+                                <CardActionArea>
+                                    <CardMedia
+                                        className={classes.media}
+                                        image={character.image}
+                                        title="Contemplative Reptile"/>
+                                    <CardContent>
+                                        <Typography style={{letterSpacing: '1rem', textAlign: 'center', textTransform: 'uppercase'}}gutterBottom variant="h5" component="h2">
+                                        {character.name}
+                                    </Typography>
+                                        <Typography style={{textAlign: 'center', textTransform: 'uppercase'}}gutterBottom variant="h5" component="h2">
+                                            {character.race}
+                                        </Typography>
+                                        <Typography style={{ textAlign: 'center', textTransform: 'uppercase'}}gutterBottom variant="h6" component="h2">
+                                            Items:
+                                        </Typography>
+                                        <Typography style={{ columnCount: '3'}} variant="body2"  component="p">
+                                            {character.items.map(item =>
+                                                <li style={{display: 'flex'}}>{item}</li>)}
+                                        </Typography>
+                                    </CardContent>
+                                </CardActionArea>
+                                <CardActions>
+                                    <Button size="small" color="black">
+                                        Level: {character.level}
+                                    </Button>
+                                    <Button size="small" color="black">
+                                        {character.job}
+                                    </Button>
+                                </CardActions>
+                            </Card>
+                            <Button
+                            variant="contained" color="secondary" className={classes.button}
+                             onClick={() => {
+                                setEditing(characterId)
+                                setName(character.name)
+                                setJob(character.job)
+                                setLevel(character.level)
+                                setItems(character.items)
+                                setRace(character.race)
+                                setImage(character.image)
+                            }}>Edit</Button>
+                        </div>
+                        :
+                            <div style={formStyle} key={characterId}>
+                                <h1>
+                                    <input defaultValue={name} onChange={event => setName(event.target.value)}></input>
+                                </h1>
+                                <h2>
+                                    <input defaultValue={job} onChange={event => setJob(event.target.value)}></input>
+                                </h2>
+                                <h2>
+                                    <input defaultValue={level} onChange={event => setLevel(event.target.value)}></input>
+                                </h2>
+                                <h2>
+                                    <input defaultValue={race} onChange={event => setRace(event.target.value)}></input>
+                                </h2>
 
-                let character = props.charactersList[characterId];
+                            <TextField
+                                id="standard-multiline-flexible"
+                                label='Items'
+                                margin="normal"
+                                className={classes.textField}
+                                Value={items}
+                                onChange={event => setItems(event.target.value)}/>
 
-                return editing !== characterId ?
-                
-                <div key={characterId}>
-
-                    <Card className={classes.card}>
-                        <CardActionArea>
-                            <CardMedia
-                                className={classes.media}
-                                image={character.image}
-                                title="Contemplative Reptile"
-                            />
-                            <CardContent>
-                                <Typography gutterBottom variant="h5" component="h2">
-                                    {character.name}
-                                </Typography>
-                                <Typography variant="body2" color="textSecondary" component="p">
-                                    {character.items.map(item =>
-                                        <p>{item}</p>)}
-                                </Typography>
-                            </CardContent>
-                        </CardActionArea>
-                        <CardActions>
-                            <Button size="small" color="primary">
-                                Level: {character.level}
+                            <Button
+                                variant="contained" color="secondary" className={classes.button}
+                                onClick={() => props.dispatch({ type: 'DELETE_CHARACTER', id: characterId })}>Delete
                             </Button>
-                            <Button size="small" color="primary">
-                                {character.job}
-                            </Button>
-                        </CardActions>
-                    </Card>
-                    <Button 
-                    variant="contained" color="secondary" className={classes.button}
-                     onClick={() => {
-                        setEditing(characterId)
-                        setName(character.name)
-                        setJob(character.job)
-                        setLevel(character.level)
-                        setItems(character.items)
-                        setRace(character.race)
-                        setImage(character.image)
-                    }}>Edit</Button>
 
-                   
-
-
-                </div>
-                :
-                <div key={characterId}>
-                <h1>
-                    <input defaultValue={name} onChange={event => setName(event.target.value)}></input>
-                </h1>
-                <h2>
-                    <input defaultValue={job} onChange={event => setJob(event.target.value)}></input>
-                </h2>
-                <h2>
-                    <input defaultValue={level} onChange={event => setLevel(event.target.value)}></input>
-                </h2>
-                <h2>
-                    <input defaultValue={race} onChange={event => setRace(event.target.value)}></input>
-                </h2>
-
-                <TextField 
-                id="standard-multiline-flexible"
-                label='Items'
-                margin="normal"
-                className={classes.textField}
-                Value={items} 
-                onChange={event => setItems(event.target.value)}/>
-                
-                
-                <Button 
-                    variant="contained" color="secondary" className={classes.button}
-                    onClick={() => props.dispatch({ type: 'DELETE_CHARACTER', id: characterId })}>Delete</Button>
-                    
-                <Button 
-                onClick={() => {
-                    handleEditNewCharacter()
-                    console.log(characterId)
-                    setEditing(null);
-                }}>Submit</Button>
-            </div>
-            })}
-        </Wrapper>
-        </Container>
+                            <Button
+                                onClick={() => {
+                                    handleEditNewCharacter()
+                                    console.log(characterId)
+                                    setEditing(null);
+                                }}>Submit</Button>
+                        </div>
+                    })}
+                </Wrapper>
+                <Link to='/dashboard'>
+                <Button variant="contained" color="secondary" style={{marginTop: '3rem'}} className={classes.button}>
+                    Back to Dashboard
+                </Button>
+                </Link>
+            </Container>
+        </div>
     )
 };
 
