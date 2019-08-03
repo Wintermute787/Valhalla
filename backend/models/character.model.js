@@ -21,7 +21,11 @@ const characterSchema = new Schema({
     image: {
         type: String,
         
-    }
+    },
+    user: [{
+        type: schema.Types.ObjectId,
+        ref: 'User'
+    }]
   
 });
 
