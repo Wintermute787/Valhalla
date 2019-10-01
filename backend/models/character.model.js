@@ -22,9 +22,16 @@ const characterSchema = new Schema({
         type: String,
         
     },
+<<<<<<< HEAD
     items: {
         type: Array
     }
+=======
+    user: [{
+        type: schema.Types.ObjectId,
+        ref: 'User'
+    }]
+>>>>>>> adffa46ad4a18dbbe43b8d727b047eb08b44012f
   
 });
 
