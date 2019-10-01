@@ -12,8 +12,10 @@ class Login extends Component {
     this.state = {
       email: "",
       password: "",
-      errors: {}
+      errors: {},
+      
     };
+    
   }
 
   componentDidMount() {
@@ -49,8 +51,9 @@ const userData = {
     };
     this.props.loginUser(userData); // since we handle the redirect within our component, we don't need to pass in this.props.history as a parameter
 console.log(userData);
-  };
 
+  };
+ 
 
 render() {
     const { errors } = this.state;

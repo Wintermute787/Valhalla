@@ -7,6 +7,7 @@ import MenuItem from '@material-ui/core/MenuItem';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import { Route, Redirect } from 'react-router'
+import handleNewCharacterOnSubmit from '../actions/characterActions';
 
 
 const useStyles = makeStyles(theme => ({
@@ -42,20 +43,31 @@ const CharacterForm = (props) => {
     const [image, setImage] = useState('');
     
 
-    function handleNewCharacterOnSubmit() {                            
-        props.dispatch({
-            type: 'ADD_CHARACTER',
-            id: uuid.v4(),
-            name: name,
-            job: job,
-            level: level,
-            race: race,
-            image: image,
-            items: items.toString().split(','),
+    // function handleNewCharacterOnSubmit() {                            
+    //     props.dispatch({
+    //         type: 'ADD_CHARACTER',
+    //         id: uuid.v4(),
+    //         name: name,
+    //         job: job,
+    //         level: level,
+    //         race: race,
+    //         image: image,
+    //         items: items.toString().split(','),
             
-            })
-        props.history.push('/character')
-        }
+    //         })
+    //     props.history.push('/character')
+    //     }
+  function handleNewCharacterOnSubmit() {
+      const newCharacter = {
+        name: name,
+        job: job,
+        race: race,
+        level: level,
+        image: image,
+        items: items.toString().split(','),
+      }
+  }
+    
 
     return (
         <Container>

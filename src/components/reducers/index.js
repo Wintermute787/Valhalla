@@ -4,6 +4,7 @@ import errorReducer from './errorReducers';
 import characterReducer from './characterReducer';
 import gameReducer from './gameReducer';
 
+
 export default combineReducers({
     auth: authReducer,
     errors: errorReducer,

@@ -21,6 +21,9 @@ const characterSchema = new Schema({
     image: {
         type: String,
         
+    },
+    items: {
+        type: Array
     }
   
 });

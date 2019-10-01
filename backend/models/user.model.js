@@ -19,7 +19,11 @@ const userSchema = new Schema({
 	date: {
 		type: Date,
 		default: Date.now
-	}
+	},
+	characters: [{
+		type: Schema.Types.ObjectId,
+		ref: 'Character'
+	}]
 	
 });
 
